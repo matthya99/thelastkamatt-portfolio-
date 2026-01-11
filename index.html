@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheLastKamatt | Portfolio</title>
+    
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigazione -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="logo">THELASTKAMATT</span>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">Chi Sono</a></li>
+                <li><a href="#portfolio">Archivi</a></li>
+                <li><a href="#contact">Social</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1 class="glitch-text">THELASTKAMATT</h1>
+            <p class="subtitle">Lore Analyst | Content Creator</p>
+            <div class="social-links-hero">
+                <!-- LINK CORRETTI -->
+                <a href="https://www.youtube.com/@thelastkamatt" target="_blank" class="soul-btn">YouTube</a>
+                <a href="https://www.twitch.tv/kamatt_official" target="_blank" class="soul-btn">Twitch</a>
+            </div>
+        </div>
+        <div class="fog-overlay"></div>
+    </section>
+
+            <!-- SEZIONE IL PROGETTO (MANIFESTO ARTISTICO) -->
+    <section id="about" class="content-section">
+        <h2 class="section-title">Il Manifesto</h2>
+        
+        <div class="about-grid">
+            
+            <!-- COLONNA 1: La Visione -->
+            <div class="about-text">
+                <h3 style="color: #c5a059; margin-bottom: 20px;">L'Opera Omnia</h3>
+                <p>
+                    <strong>The Last Kamatt</strong> non è solo un canale, è un ecosistema narrativo. 
+                    Un progetto transmediale che fonde l'estetica del <em>Dark Fantasy Medievale</em> 
+                    con la ruggine e gli ingranaggi dello <em>Steampunk</em>.
+                </p>
+                <p>
+                    L'obiettivo è trasformare ogni piattaforma — dai video su YouTube alle live su Twitch, 
+                    fino alle tavole disegnate a mano — in un tassello di un unico, grande mosaico oscuro.
+                </p>
+                <p>
+                    Qui la narrazione non viene solo raccontata, viene costruita insieme, pezzo dopo pezzo, 
+                    ingranaggio dopo ingranaggio.
+                </p>
+            </div>
+
+            <!-- COLONNA 2: I Pilastri del Progetto -->
+            <div class="about-stats">
+                <h3 style="color: #c5a059; margin-bottom: 20px;">I Pilastri</h3>
+                <ul class="stats-list">
+                    <li>
+                        <span class="stat-label">Video & Lore</span> 
+                        Analisi narrativa e documentari in stile cinematografico.
+                    </li>
+                    <li>
+                        <span class="stat-label">Streaming</span> 
+                        L'interazione diretta, il falò attorno a cui si riunisce la community.
+                    </li>
+                    <li>
+                        <span class="stat-label">Arte Visiva</span> 
+                        Fumetti e illustrazioni originali che espandono l'universo.
+                    </li>
+                </ul>
+                
+                <!-- Citazione Manifesto -->
+                <p style="margin-top: 25px; font-size: 1rem; color: #d1d1d1; font-family: 'Cinzel', serif; text-align: center; border-top: 1px solid #333; padding-top: 15px;">
+                    "Forgiare mondi. Analizzare l'abisso."
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ARCHIVI (Portfolio) -->
+    <section id="portfolio" class="content-section">
+        <h2 class="section-title">Gli Archivi</h2>
+        <div class="projects-grid">
+            
+            <!-- Card 1: Lore Analysis -->
+            <a href="lore.html" class="project-card-link">
+                <div class="project-card" style="background-image: url('lore-bg.jpg');">
+                    <div class="card-content">
+                        <h3>Lore Analysis</h3>
+                        <p>Deep dive narrative e segreti scoperti.</p>
+                        <span class="card-arrow">Vedi Progetto &rarr;</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 2: Live Streaming -->
+            <a href="https://www.twitch.tv/kamatt_official" target="_blank" class="project-card-link">
+                <div class="project-card" style="background-image: url('stream-bg.jpg');">
+                    <div class="card-content">
+                        <h3>Live Streaming</h3>
+                        <p>Gameplay e discussioni in diretta.</p>
+                        <span class="card-arrow">Vai al Canale &rarr;</span>
+                    </div>
+                </div>
+            </a>
+            
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <p>&copy; 2026 TheLastKamatt. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
