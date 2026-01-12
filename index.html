@@ -15,13 +15,15 @@
 </head>
 <body>
 
-    <!-- Navigazione -->
+        <!-- Navigazione -->
     <nav class="navbar">
         <div class="nav-container">
             <span class="logo">THELASTKAMATT</span>
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">Chi Sono</a></li>
+                <!-- NUOVO LINK AGGIUNTO QUI SOTTO -->
+                <li><a href="#blog-preview">Diario</a></li>
                 <li><a href="#portfolio">Archivi</a></li>
                 <li><a href="#contact">Social</a></li>
             </ul>
@@ -42,15 +44,18 @@
         <div class="fog-overlay"></div>
     </section>
 
-            <!-- SEZIONE IL PROGETTO (MANIFESTO ARTISTICO) -->
+                <!-- SEZIONE CHI SONO (Titolo Modificato) -->
     <section id="about" class="content-section">
-        <h2 class="section-title">Il Manifesto</h2>
+        <!-- MODIFICA QUI: Da 'Il Manifesto' a 'Chi Sono' -->
+        <h2 class="section-title">Chi Sono</h2>
         
         <div class="about-grid">
             
-            <!-- COLONNA 1: La Visione -->
+            <!-- COLONNA 1: Testo descrittivo -->
             <div class="about-text">
-                <h3 style="color: #c5a059; margin-bottom: 20px;">L'Opera Omnia</h3>
+                <!-- MODIFICA QUI: Da 'L'Opera Omnia' a 'La Mia Visione' -->
+                <h3 style="color: #c5a059; margin-bottom: 20px;">La Mia Visione</h3>
+                
                 <p>
                     <strong>The Last Kamatt</strong> non è solo un canale, è un ecosistema narrativo. 
                     Un progetto transmediale che fonde l'estetica del <em>Dark Fantasy Medievale</em> 
@@ -66,10 +71,11 @@
                 </p>
             </div>
 
-            <!-- COLONNA 2: I Pilastri del Progetto -->
+            <!-- COLONNA 2: I Pilastri (Resta uguale, va bene così?) -->
             <div class="about-stats">
                 <h3 style="color: #c5a059; margin-bottom: 20px;">I Pilastri</h3>
                 <ul class="stats-list">
+                    <!-- ... il resto della lista rimane uguale ... -->
                     <li>
                         <span class="stat-label">Video & Lore</span> 
                         Analisi narrativa e documentari in stile cinematografico.
@@ -84,10 +90,32 @@
                     </li>
                 </ul>
                 
-                <!-- Citazione Manifesto -->
                 <p style="margin-top: 25px; font-size: 1rem; color: #d1d1d1; font-family: 'Cinzel', serif; text-align: center; border-top: 1px solid #333; padding-top: 15px;">
                     "Forgiare mondi. Analizzare l'abisso."
                 </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEZIONE DIARIO DI BORDO (BLOG/NEWS) -->
+    <section id="blog-preview" class="content-section" style="border-bottom: 1px solid #222;">
+        <h2 class="section-title">Diario di Bordo</h2>
+        
+        <div class="blog-preview-container">
+            
+            <!-- Anteprima Ultima News (Esempio) -->
+            <div class="blog-snippet">
+                <span class="news-date">12 Gennaio 2026</span>
+                <h3 class="news-title">Lavori in corso sul nuovo sito</h3>
+                <p class="news-excerpt">
+                    Stiamo costruendo l'architettura finale del portale. Presto saranno disponibili nuove sezioni dedicate alla Lore...
+                </p>
+            </div>
+
+            <!-- Pulsante per andare al Blog completo -->
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="blog.html" class="soul-btn">Leggi Tutte le News</a>
             </div>
 
         </div>
@@ -122,6 +150,58 @@
             
         </div>
     </section>
+
+<!-- SEZIONE PROGETTI -->
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title">I Miei Progetti</h2>
+        
+        <!-- Progetto 1: YouTube / Analisi -->
+        <div class="project-row">
+            <div class="project-image">
+                <!-- Usa un'immagine evocativa, tipo un frame di Dark Souls o un tuo video -->
+                <img src="img/progetto-lore.jpg" alt="Analisi Lore"> 
+        </div>
+            <div class="project-content">
+                <h3>Analisi & Lore</h3>
+                <p>Esploro le profondità narrative dei mondi videoludici. Dai segreti di Lordran alle architetture di Elden Ring, ogni video è un saggio visivo sulla narrazione ambientale.</p>
+                <!-- PRIMA: <a href="#" class="btn-text">Guarda il Canale &rarr;</a> -->
+<!-- DOPO: -->
+<a href="https://www.youtube.com/@thelastkamatt" class="btn-text" target="_blank">Guarda il Canale &rarr;</a>
+
+            </div>
+        </div>
+
+        <!-- Blocco FUMETTO (ricorda: questo ha la classe 'reverse' per l'immagine a destra) -->
+<div class="project-row reverse">
+    <div class="project-image">
+        <!-- CAMBIA QUI IL NOME DEL FILE E L'ESTENSIONE CORRETTA -->
+        <img src="img/progetto-fumetto.jpg" alt="Il Fumetto"> 
+    </div>
+    <div class="project-content">
+        <h3>Progetto Fumetto</h3>
+        <p>Una storia originale scritta e disegnata da me...</p> <!-- Lascia o cambia il testo -->
+        <!-- CAMBIA IL LINK SE VUOI -->
+        <a href="#" class="btn-text">Leggi il Capitolo 1 &rarr;</a>
+    </div>
+</div>
+
+
+        <!-- Progetto 3: Tech & Hardware -->
+        <div class="project-row">
+            <div class="project-image">
+                <img src="img/progetto-pc.jpg" alt="PC Gaming">
+</div>
+            <div class="project-content">
+                <h3>PC Optimization</h3>
+                <p>Guide all'ottimizzazione, overclocking e modding. Perché giocare su PC è un'arte che richiede la giusta tecnica.</p>
+                <a href="#" class="btn-text">Guide Hardware &rarr;</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 
     <!-- FOOTER -->
     <footer id="contact">

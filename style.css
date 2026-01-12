@@ -530,3 +530,385 @@ footer {
     }
 }
 
+/* =========================================
+   STILE SEZIONE BLOG (ANTEPRIMA HOME)
+   ========================================= */
+
+.blog-preview-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(20, 20, 20, 0.4); /* Leggermente diverso dallo sfondo per staccare */
+    padding: 40px;
+    border-left: 2px solid #c5a059; /* Linea verticale oro a sinistra (stile citazione) */
+    position: relative;
+}
+
+.blog-snippet {
+    margin-bottom: 20px;
+}
+
+.news-date {
+    font-size: 0.85rem;
+    color: #c5a059; /* Data in oro */
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.news-title {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+    font-weight: 400; /* Font leggero ed elegante */
+}
+
+.news-excerpt {
+    font-size: 1rem;
+    color: #aaa;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* =========================================
+   STILE PAGINA BLOG (GIORNALE)
+   ========================================= */
+
+.journal-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.journal-entry {
+    margin-bottom: 60px;
+}
+
+.journal-date {
+    display: block;
+    color: #c5a059;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    border-left: 3px solid #c5a059;
+    padding-left: 10px;
+}
+
+.journal-entry h2 {
+    font-size: 2rem;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.journal-entry p {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.7;
+    text-align: justify; /* Testo giustificato stile giornale */
+}
+
+/* DIVISORE ELEGANTE TRA GLI ARTICOLI */
+.journal-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(197, 160, 89, 0.75), rgba(0, 0, 0, 0));
+    margin: 60px 0;
+}
+
+/* LAYOUT TESTO SX - IMMAGINE DX */
+.split-layout {
+    display: flex;
+    gap: 40px;
+    align-items: center; /* Centra verticalmente */
+}
+
+.text-col {
+    flex: 1.5; /* Il testo occupa più spazio */
+}
+
+.img-col {
+    flex: 1; /* L'immagine occupa meno spazio */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-caption {
+    font-size: 0.8rem !important;
+    color: #666 !important;
+    text-align: center !important;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* BOTTONE PICCOLO PER IL BLOG */
+.soul-btn-small {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid #c5a059;
+    color: #c5a059;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.soul-btn-small:hover {
+    background: #c5a059;
+    color: #000;
+}
+
+/* PLACEHOLDER PER IMMAGINI (I riquadri grigi tratteggiati) */
+.img-placeholder-wide,
+.img-placeholder-square,
+.img-placeholder-rect {
+    background: #1a1a1a;
+    border: 2px dashed #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.img-placeholder-wide {
+    width: 100%;
+    height: 300px; /* Altezza immagine panoramica */
+}
+
+.img-placeholder-square {
+    width: 250px;
+    height: 250px; /* Quadrato per il logo */
+}
+
+.img-placeholder-rect {
+    width: 100%;
+    height: 150px;
+}
+
+/* GRIGLIA NEWS PICCOLE (NUOVA VERSIONE ALLINEATA) */
+.journal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px; /* Più spazio tra le due news */
+    margin-top: 20px;
+    width: 100%;
+}
+
+.journal-card {
+    background: transparent; /* Togliamo lo sfondo nero scatolato */
+    padding: 0;              /* Togliamo il margine interno */
+    border: none;            /* Togliamo il bordo */
+}
+
+.journal-card h3 {
+    color: #c5a059;
+    margin-bottom: 15px;
+    font-family: 'Cinzel', serif;
+}
+
+/* RESPONSIVE PER CELLULARE */
+@media (max-width: 768px) {
+    .split-layout {
+        flex-direction: column; /* Mette immagine sotto il testo su mobile */
+    }
+    
+    .journal-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .img-placeholder-square {
+        width: 100%; /* Logo largo su mobile */
+    }
+}
+
+/* --- FIX IMMAGINE BLOG PANORAMICA --- */
+
+.journal-img-container {
+    width: 100% !important;      /* Forza il contenitore ad essere largo tutto lo schermo */
+    max-width: 100% !important;
+    display: flex;               /* Centra il contenuto */
+    justify-content: center;
+    margin: 20px 0;
+    border: 1px solid #333;
+    overflow: hidden;            /* Se sborda, taglia */
+}
+
+.journal-img-wide {
+    width: 100% !important;      /* L'immagine DEVE riempire il contenitore */
+    height: auto;
+    display: block;
+    object-fit: cover;           /* Copre tutto lo spazio senza deformarsi */
+}
+
+/* STILE LOGO NEL BLOG */
+.journal-logo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;       /* Assicura che l'immagine non si deformi */
+    border-radius: 50%;      /* Cerchio perfetto (se vuoi il quadrato, togli questa riga) */
+    border: 3px solid #c5a059; /* Bordo Oro */
+    box-shadow: 0 0 25px rgba(197, 160, 89, 0.3); /* Alone luminoso */
+    transition: transform 0.3s ease;
+}
+
+.journal-logo:hover {
+    transform: rotate(5deg) scale(1.05); /* Effetto simpatico quando ci passi sopra */
+    box-shadow: 0 0 40px rgba(197, 160, 89, 0.6);
+}
+
+/* PATCH DI ALLINEAMENTO ESTREMO */
+.journal-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important; /* Usiamo Flexbox invece di Grid per controllo totale */
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.journal-card {
+    flex: 1; /* Le due card si dividono lo spazio equamente */
+    width: 50%;
+    margin: 0 !important;
+    padding: 20px !important; /* Rimettiamo un po' di padding se ti piaceva il box */
+    background: #111; /* Rimettiamo lo sfondo scuro se ti piaceva */
+    border: 1px solid #333;
+}
+
+/* Fix per mobile (altrimenti si rompe sul telefono) */
+@media (max-width: 768px) {
+    .journal-grid {
+        flex-direction: column;
+    }
+    .journal-card {
+        width: 100%;
+    }
+}
+/* --- FIX FINALE PER LE MINIATURE ESPLOSIVE --- */
+
+.journal-thumb-container {
+    width: 100% !important;        /* Il box è largo quanto la colonna */
+    height: 200px !important;      /* Altezza fissa obbligatoria */
+    overflow: hidden !important;   /* Se l'immagine è più grande, taglia l'eccesso */
+    border: 1px solid #333;
+    margin-bottom: 15px;
+    position: relative;            /* Blocca il contenuto assoluto */
+    display: block;
+}
+
+.journal-thumb {
+    width: 100% !important;        /* L'immagine DEVE essere larga quanto il box */
+    height: 100% !important;       /* L'immagine DEVE essere alta quanto il box */
+    object-fit: cover !important;  /* Ritaglia l'immagine per riempire il buco senza deformarla */
+    display: block !important;
+    max-width: 100% !important;    /* Sicurezza extra: mai più larga del 100% */
+}
+
+/* --- SEZIONE PROGETTI (SCACCHIERA) --- */
+
+#projects {
+    padding: 80px 0;
+    background-color: #0a0a0a; /* Sfondo leggermente diverso dal nero totale per stacco */
+}
+
+/* Contenitore di ogni riga (Progetto) */
+.project-row {
+    display: flex;
+    align-items: center; /* Centra verticalmente testo e immagine */
+    justify-content: space-between;
+    margin-bottom: 80px; /* Spazio tra un progetto e l'altro */
+    gap: 50px; /* Spazio tra immagine e testo */
+}
+
+/* Versione invertita (Testo a SX, Immagine a DX) */
+.project-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* L'immagine del progetto */
+.project-image {
+    flex: 1; /* Occupa metà spazio */
+    position: relative;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(80%); /* Effetto desaturato elegante */
+    transition: filter 0.3s ease;
+}
+
+/* Effetto Hover sull'immagine */
+.project-image:hover {
+    transform: scale(1.02); /* Leggero zoom */
+    border-color: #c9a55c; /* Bordo oro */
+}
+
+.project-image:hover img {
+    filter: grayscale(0%); /* Torna a colori quando passi sopra */
+}
+
+/* Il contenuto testuale */
+.project-content {
+    flex: 1; /* Occupa l'altra metà */
+}
+
+.project-content h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #c9a55c; /* Titolo oro */
+    font-family: 'Cinzel', serif; /* Font elegante se lo hai importato, o serif */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.project-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+/* Pulsante testuale elegante */
+.btn-text {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #c9a55c;
+    padding-bottom: 5px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-text:hover {
+    color: #c9a55c;
+    border-color: transparent; /* Toglie la linea sotto all'hover per effetto pulito */
+}
+
+/* --- ADATTAMENTO MOBILE --- */
+@media (max-width: 768px) {
+    .project-row, 
+    .project-row.reverse {
+        flex-direction: column; /* Su mobile tutto in colonna verticale */
+        gap: 20px;
+    }
+
+    .project-image, 
+    .project-content {
+        width: 100%; /* Larghezza piena su mobile */
+        text-align: left; /* O center se preferisci */
+    }
+    
+    .project-image {
+        margin-bottom: 20px;
+    }
+}
+
+
