@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+<!-- Importante: Libreria FontAwesome per le icone social -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
@@ -204,19 +207,30 @@
 
 
     <!-- FOOTER -->
-    <footer id="contact">
-        <p>&copy; 2026 TheLastKamatt. All rights reserved.</p>
-    </footer>
+<footer id="footer">
+    <div class="container footer-content">
+        <!-- Icone Social -->
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@thelastkamatt" target="_blank" title="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://instagram.com/kamatt_official" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:tuamail@email.com" title="Contattami">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
 
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+        <!-- Copyright -->
+        <p class="copyright">
+            &copy; 2026 TheLastKamatt. Created with <i class="fas fa-heart" style="color: #c9a55c; font-size: 0.8rem;"></i> & Dark Souls Passion.
+        </p>
+
+        <!-- Tasto Torna Su -->
+        <a href="#hero" class="back-to-top">Torna su &uarr;</a>
+    </div>
+</footer>
+
 </body>
 </html>
