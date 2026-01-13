@@ -1164,6 +1164,135 @@ footer {
     }
 }
 
+/* =========================================
+   SISTEMA DEI PATTI (COVENANTS)
+   ========================================= */
+
+.covenant-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.covenant-card {
+    background: #0f0f0f;
+    border: 1px solid #333;
+    width: 300px;
+    padding: 40px 20px;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Effetto 'Pergamena Scura' */
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+}
+
+/* Icona Grande in alto */
+.covenant-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #555;
+    transition: all 0.4s ease;
+}
+
+.covenant-card h3 {
+    color: #ccc;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-family: 'Cinzel', serif;
+    transition: color 0.3s;
+}
+
+.covenant-desc {
+    color: #888;
+    font-size: 0.95rem;
+    font-style: italic;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+/* Statistiche / Bonus (stile RPG) */
+.covenant-bonus {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.join-btn {
+    padding: 10px 25px;
+    border: 1px solid #444;
+    color: #888;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+}
+
+/* --- EFFETTI HOVER SPECIFICI PER PATTO --- */
+
+/* Hover Generale */
+.covenant-card:hover {
+    transform: translateY(-10px);
+    border-color: #fff;
+}
+
+.covenant-card:hover .join-btn {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+/* 1. PATTO LORE (YouTube - Rosso Sangue/Fuoco) */
+.lore-pact:hover {
+    border-color: #d13030;
+    box-shadow: 0 0 30px rgba(209, 48, 48, 0.2);
+}
+.lore-pact:hover .covenant-icon { color: #d13030; text-shadow: 0 0 10px #d13030; }
+.lore-pact:hover h3 { color: #d13030; }
+.lore-pact:hover .join-btn { background: #d13030; color: #fff; border-color: #d13030; box-shadow: 0 0 20px rgba(209, 48, 48, 0.6); }
+
+/* 2. PATTO COMMUNITY (Twitch - Viola Abissale) */
+.community-pact:hover {
+    border-color: #9146ff;
+    box-shadow: 0 0 30px rgba(145, 70, 255, 0.2);
+}
+.community-pact:hover .covenant-icon { color: #9146ff; text-shadow: 0 0 10px #9146ff; }
+.community-pact:hover h3 { color: #9146ff; }
+.community-pact:hover .join-btn { background: #9146ff; color: #fff; border-color: #9146ff; box-shadow: 0 0 20px rgba(145, 70, 255, 0.6); }
+
+/* 3. PATTO ARTEFICE (Mail - Oro Steampunk) */
+.artificer-pact:hover {
+    border-color: #c5a059;
+    box-shadow: 0 0 30px rgba(197, 160, 89, 0.2);
+}
+.artificer-pact:hover .covenant-icon { color: #c5a059; text-shadow: 0 0 10px #c5a059; }
+.artificer-pact:hover h3 { color: #c5a059; }
+.artificer-pact:hover .join-btn { background: #c5a059; color: #000; border-color: #c5a059; box-shadow: 0 0 20px rgba(197, 160, 89, 0.6); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .covenant-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .covenant-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
 
 
 
