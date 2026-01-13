@@ -957,5 +957,213 @@ footer {
     color: #fff;
 }
 
+/* =========================================
+   NUOVA SEZIONE: I MIEI PROGETTI (LISTA)
+   ========================================= */
+
+#projects .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Contenitore della riga (Immagine + Testo) */
+.project-row {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    gap: 50px;           /* Spazio tra immagine e testo */
+    margin-bottom: 80px; /* Spazio tra un progetto e l'altro */
+}
+
+/* Variante per invertire l'ordine (Immagine a destra) */
+.project-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Gestione dell'immagine */
+.project-image {
+    flex: 1;             /* Occupa una porzione flessibile */
+    max-width: 500px;    /* LARGHEZZA MASSIMA DEL CONTENITORE IMMAGINE */
+}
+
+.project-image img {
+    width: 100%;         /* L'immagine si adatta al contenitore */
+    height: auto;        /* Mantiene le proporzioni originali */
+    display: block;
+    border: 1px solid #333;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.8); /* Ombra scura elegante */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Effetto Hover sull'immagine */
+.project-image img:hover {
+    transform: scale(1.02);
+    border-color: #c5a059; /* Diventa dorato al passaggio del mouse */
+}
+
+/* Contenuto Testuale */
+.project-content {
+    flex: 1;
+    text-align: left;
+}
+
+.project-content h3 {
+    font-size: 2rem;
+    color: #c5a059;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+.project-content p {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.btn-text {
+    color: #c5a059;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-text:hover {
+    color: #fff;
+    border-bottom-color: #c5a059;
+}
+
+/* RESPONSIVE: Su schermi piccoli (cellulari) mette tutto in colonna */
+@media (max-width: 768px) {
+    .project-row, .project-row.reverse {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .project-content {
+        text-align: center;
+    }
+    
+    .project-image {
+        max-width: 100%; /* Su mobile l'immagine prende tutta la larghezza */
+    }
+}
+
+/* =========================================
+   EFFETTO CENERE (CANVAS)
+   ========================================= */
+
+#ashCanvas {
+    position: fixed; /* Rimane fisso mentre scrolli */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Sta sopra lo sfondo base */
+    pointer-events: none; /* FONDAMENTALE: permette di cliccare attraverso la cenere */
+    opacity: 0.6; /* Regola l'intensità generale dell'effetto */
+}
+
+/* Assicuriamo che il contenuto sia sopra la cenere */
+.hero-content, 
+.navbar, 
+.content-section, 
+footer {
+    position: relative;
+    z-index: 10; /* Porta il contenuto sopra le particelle */
+}
+
+/* La hero section ha già un filtro scuro, assicuriamoci che la cenere si veda */
+.hero-section::before {
+    z-index: 2; /* Il filtro scuro sta sopra la cenere per amalgamarla */
+}
+
+/* =========================================
+   TRANSIZIONE FOG GATE
+   ========================================= */
+
+.fog-gate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradiente radiale: centro più chiaro, bordi scuri, color nebbia */
+    background: radial-gradient(circle at center, #2e2e2e 0%, #0b0b0b 100%);
+    z-index: 9999; /* Sopra a TUTTO, anche alla cenere */
+    opacity: 1; /* Di base è visibile (schermo coperto) */
+    pointer-events: none; /* Lascia passare i click quando è trasparente */
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Animazione fluida */
+}
+
+/* Quando questa classe viene aggiunta, la nebbia sparisce */
+.fog-gate.fog-open {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* =========================================
+   ANIMAZIONE SOUL CLICK
+   ========================================= */
+
+.soul-burst {
+    position: fixed;
+    pointer-events: none; /* Ignora i click successivi su se stesso */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff 10%, #c5a059 60%, transparent 100%);
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 9998; /* Sopra tutto tranne la nebbia */
+    box-shadow: 0 0 20px #c5a059, 0 0 40px #ffdb8b;
+    animation: soulExplosion 0.6s ease-out forwards;
+}
+
+/* Aggiungiamo un anello esterno per l'onda d'urto */
+.soul-burst::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid rgba(197, 160, 89, 0.8);
+    transform: translate(-50%, -50%);
+    animation: soulRing 0.6s ease-out forwards;
+}
+
+@keyframes soulExplosion {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2.5);
+    }
+}
+
+@keyframes soulRing {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+        border-width: 4px;
+    }
+    100% {
+        width: 100px; /* Larghezza finale dell'onda */
+        height: 100px;
+        opacity: 0;
+        border-width: 0px;
+    }
+}
+
+
 
 
